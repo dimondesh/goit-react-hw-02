@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Feedback from "./components/Feedback/Feedback";
 import Options from "./components/Options/Options";
 import Notification from "./components/Notification/Notification";
+import Description from "./components/Description/Description";
 
 const App = () => {
   const [feedback, setFeedback] = useState(() => {
@@ -30,11 +31,10 @@ const App = () => {
 
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      <h1>Sip Happens Café</h1>
-      <p>
-        Please leave your feedback about our service by selecting one of the
-        options below.
-      </p>
+      <Description
+        title="Sip Happens Café"
+        text="Please leave your feedback about our service by selecting one of the options below."
+      />
       <Options
         options={["good", "neutral", "bad"]}
         onLeaveFeedback={updateFeedback}
